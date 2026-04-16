@@ -1,0 +1,81 @@
+# =========================
+# OS / editor junk
+# =========================
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# =========================
+# Logs / runtime
+# =========================
+logs/
+*.log
+log
+server_log.txt
+crashinfo.txt
+core.*
+*.dmp
+
+# =========================
+# Debug / symbols
+# =========================
+*.pdb
+
+
+# =========================
+# Build artifacts
+# =========================
+*.amx
+*.lst
+*.o
+*.obj
+
+# =========================
+# Runtime data / generated data
+# scriptfiles often contains live server data
+# Ignore everything by default, then unignore placeholders/examples if needed
+# =========================
+scriptfiles/*
+!scriptfiles/.gitkeep
+!scriptfiles/README.md
+!scriptfiles/examples/
+!scriptfiles/examples/**
+
+# =========================
+# Local databases / dumps / backups
+# =========================
+*.db
+*.sqlite
+*.sqlite3
+*.bak
+*.dump
+*.sql.gz
+
+# Keep SQL migrations
+!sql/
+!sql/**
+
+qawno/
+
+AGENTS.md
+
+omp-server
+omp-server.exe
+
+# Ignore local runtime DLLs if they are part of your local environment only
+libmariadb.dll
+log-core.dll
+
+models/
+
+# =========================
+# Temporary / cache
+# =========================
+cache/
+tmp/
+temp/
+runtime/

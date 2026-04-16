@@ -1,0 +1,23 @@
+CREATE TABLE `greenhouses` (
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `owner_id` INT UNSIGNED NOT NULL,
+    `slot` TINYINT UNSIGNED NOT NULL,
+    `plant_type` TINYINT UNSIGNED NOT NULL DEFAULT 1,
+    `upgrade_level` TINYINT UNSIGNED NOT NULL DEFAULT 0,
+    `growth_multiplier` TINYINT UNSIGNED NOT NULL DEFAULT 1,
+    `state` TINYINT UNSIGNED NOT NULL DEFAULT 0,
+    `stage` TINYINT UNSIGNED NOT NULL DEFAULT 0,
+    `growth_seconds` SMALLINT UNSIGNED NOT NULL DEFAULT 0,
+    `mature_at_growth_seconds` SMALLINT UNSIGNED NOT NULL DEFAULT 600,
+    `pos_x` FLOAT NOT NULL DEFAULT 0,
+    `pos_y` FLOAT NOT NULL DEFAULT 0,
+    `pos_z` FLOAT NOT NULL DEFAULT 0,
+    `interior` INT NOT NULL DEFAULT 0,
+    `world` INT NOT NULL DEFAULT 0,
+    `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `uniq_owner_slot` (`owner_id`, `slot`),
+    KEY `idx_owner_id` (`owner_id`),
+    KEY `idx_owner_state` (`owner_id`, `state`)
+);
